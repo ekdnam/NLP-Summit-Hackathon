@@ -5,7 +5,7 @@ Link to the competition: https://www.nlpsummit.org/hackathon/
 - Download the dataset from [Kaggle](https://www.kaggle.com/tboyle10/medicaltranscriptions).
 - Where you want to clone this repo, open the cmd and type
 ```
-git clone https://github.com/ekdnam/NLP-Summit-Hackathon
+git clone https://github.com/ekdnam/NLP-Summit-Hackathon.git
 ```
 - Now in cmd type,
 ```
