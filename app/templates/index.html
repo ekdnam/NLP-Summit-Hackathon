@@ -13,7 +13,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename="js/client.js") }}">
 </head>
 
 <body>
@@ -22,7 +22,7 @@
             DoctorZuhause &#x1F691;
         </h1>
     </header>
-    <form action="/description" class="mew-form">
+    <form action="" class="mew-form">
         <label for="name">Name</label>
         <input class="u-full-width" type="text" id="name" name="name">
         <label for="content">Description</label>
