@@ -13,3 +13,10 @@ mkdir input
 cd input
 ```
 - Unzip the dataset to `input`
+
+### Run server
+
+```
+cd app
+npm run dev
+```
