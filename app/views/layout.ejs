@@ -9,7 +9,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Meower - Twitter for Cats</title>
+    <title>Doctor ZuHause</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
@@ -17,25 +17,28 @@
 </head>
 
 <body>
-    <header>
+    <!-- <header>
         <h1 class="title">
             Doctor ZuHause &#x1F691;
         </h1>
     </header>
-    <form action="" class="desc-form">
+    <form action="/getDiagnosis" class="desc-form" method = "POST">
         <label for="name">Name</label>
         <input class="u-full-width" type="text" id="name" name="name">
         <label for="content">How are you feeling? What are your symptoms?</label>
         <textarea class="u-full-width" type="text" id="content" name="content"></textarea>
         <button class="button-primary">Get your diagnosis &#x1F469;&#x200D;&#x2695;&#xFE0F;</button>
-    </form>
+    </form> -->
+    <body class = "container">
+        <%- body %>
+    </body>
     <div class="loading">
         <img src="assets/gif/loading.gif" alt="">
     </div>
     <div class="diagnosis">
 
     </div>
-    <script src="assets/js/client.js" async defer></script>
+    <script src="client.js" async defer></script>
 </body>
 
 </html>

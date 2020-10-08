@@ -8,7 +8,7 @@ const loadingElement = document.querySelector('.loading');
 // select the contents stored in the mews class
 const diagnosisElement = document.querySelector('.diagnosis');
 // where the server is
-const API_URL = "http://localhost:5000/mews";
+const API_URL = "http://localhost:5000/getDiagnosis";
 
 // hide the loading gif
 loadingElement.style.display = "none";
@@ -23,24 +23,24 @@ form.addEventListener('submit', (event) => {
     const content = formData.get('content');
     console.log("form was submitted");
 
-    const mew = {
+    const data = {
         name,
         content
     }
 
     form.style.display = 'none';
-    console.log(mew);
+    console.log(data);
     loadingElement.style.display = '';
 
     fetch(API_URL, {
             method: 'POST',
-            body: JSON.stringify(mew),
+            body: JSON.stringify(data),
             headers: {
                 'content-type': 'application/json'
             }
         }).then(response => response.json())
         .then(description => {
-            // console.log(createdMew);
+            console.log(description);
             form.reset();
             // setTimeout(() => {
             // }, 30000);
