@@ -1,3 +1,7 @@
+var util = require("util");
+
+const {spawn} = require('child_process');
+var Process = spawn('python',["python_launched_from_nodejs.py"]);
 // file read write
 const fs = require('fs');
 // get mongoose
@@ -16,8 +20,9 @@ const db = require('./config/keys').mongoURI;
 const path = require('path');
 // Port where app is running
 const PORT = process.env.PORT || 5000;
+// const PORT = 5000;
 // result
-const result = require('./result.json')
+// const result = require('./result.json')
 // create express application
 const app = express();
 // ejs
@@ -52,13 +57,24 @@ app.post('/getDiagnosis', (req, res) => {
         console.log('complete');
         });
     console.log(Data);
-    // desc = name;
-    // medicalSpecialty = description;
-    // var result = [{
-    //     desc: "THE DISEASE IS ****",
-    //     medicalSpecialty: "THE MEDICAL SPECIALTY IS ****" 
-    // }];
-    var resultTable;
+
+    console.log('Starting python script');
+    const python = spawn('python', ['main.py']);
+
+    var dataToSend;
+
+    python.stdout.on('data', function (data) {
+        console.log('Pipe data from python script ...');
+        dataToSend = data.toString();
+       });
+       // in close event we are sure that stream from child process is closed
+       python.on('close', (code) => {
+       console.log(`child process close all stdio with code ${code}`);
+       // send data to browser
+       res.send(dataToSend)
+       });
+
+    var result = require('./result.json');
     var disease = result.Disease;
     var desc = result.Description;
     // fs.readFile('result.json', (err, data) => {

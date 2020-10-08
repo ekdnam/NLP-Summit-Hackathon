@@ -1,7 +1,10 @@
 # NLP-Summit-Hackathon
+
+![demo](./images/demo.jpg)
 Link to the competition: https://www.nlpsummit.org/hackathon/
 
-Built using: Node, Express, EJS, Python
+Built using: Node, Express, EJS, Python.
+
 
 ## Use the repo
 - Download the dataset from [Kaggle](https://www.kaggle.com/tboyle10/medicaltranscriptions).
