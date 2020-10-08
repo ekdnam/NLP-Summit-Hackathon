@@ -2,7 +2,7 @@
     text-align: center;
 }
 
-.mew-form,
+.desc-form,
 .loading {
     width: 50%;
     margin: auto;
@@ -12,7 +12,7 @@
     text-align: center;
 }
 
-.mews {
+.diagnosis {
     width: 80%;
     margin: auto;
 }
