@@ -8,13 +8,13 @@ const loadingElement = document.querySelector('.loading');
 // select the contents stored in the mews class
 const mewsElement = document.querySelector('.mews');
 // where the server is
-const API_URL = "http://localhost:5000/description";
+const API_URL = "http://localhost:5000/mews";
 
 // hide the loading gif
 loadingElement.style.display = "none";
 
 // show all previous mews
-// listAllMews();
+listAllMews();
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -23,28 +23,28 @@ form.addEventListener('submit', (event) => {
     const content = formData.get('content');
     console.log("form was submitted");
 
-    const enteredData = {
+    const mew = {
         name,
         content
     }
 
     form.style.display = 'none';
-    console.log(enteredData);
+    console.log(mew);
     loadingElement.style.display = '';
 
     fetch(API_URL, {
             method: 'POST',
-            body: JSON.stringify(enteredData),
+            body: JSON.stringify(mew),
             headers: {
                 'content-type': 'application/json'
             }
         }).then(response => response.json())
-        .then(sentData => {
-            console.log(sentData);
+        .then(createdMew => {
+            // console.log(createdMew);
             form.reset();
             // setTimeout(() => {
             // }, 30000);
-            // listAllMews();
+            listAllMews();
             form.style.display = '';
             loadingElement.style.display = 'none'
         });
