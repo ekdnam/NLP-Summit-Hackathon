@@ -16,3 +16,10 @@
     width: 80%;
     margin: auto;
 }
+
+.bg {
+    background-image: url('../images/doctor-1.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }

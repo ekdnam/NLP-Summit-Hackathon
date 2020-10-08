@@ -16,6 +16,8 @@ const db = require('./config/keys').mongoURI;
 const path = require('path');
 // Port where app is running
 const PORT = process.env.PORT || 5000;
+// result
+const result = require('./result.json')
 // create express application
 const app = express();
 // ejs
@@ -24,7 +26,7 @@ app.use(expressLayouts);
 app.set('view engine', 'ejs');
 // app.set('views', path.join(__dirname, 'public'));
 app.use(bodyParser.urlencoded({ extended: true }));
-
+app.use(express.static(__dirname + '/assets/'));
 app.use(cors());
 app.use(express.json());
 
@@ -50,15 +52,27 @@ app.post('/getDiagnosis', (req, res) => {
         console.log('complete');
         });
     console.log(Data);
-    desc = name;
-    medicalSpecialty = description;
-    var result = [{
-        desc: "THE DISEASE IS ****",
-        medicalSpecialty: "THE MEDICAL SPECIALTY IS ****" 
-    }];
+    // desc = name;
+    // medicalSpecialty = description;
+    // var result = [{
+    //     desc: "THE DISEASE IS ****",
+    //     medicalSpecialty: "THE MEDICAL SPECIALTY IS ****" 
+    // }];
+    var resultTable;
+    var disease = result.Disease;
+    var desc = result.Description;
+    // fs.readFile('result.json', (err, data) => {
+    //     // if (err) throw err;
+    //     resultTable = JSON.parse(data);
+    //     var medicalSpecialty = resultTable.Disease;
+    //     var desc = resultTable.Description;
+    //     console.log(resultTable);
+    // });
+
     res.render('getDiagnosis.ejs',{
-        desc,
-        medicalSpecialty
+        name,
+        disease,
+        desc
     });
 });
 app.listen(PORT, () => {

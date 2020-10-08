@@ -21,17 +21,17 @@
     <link rel="manifest" href="assets/ico/site.webmanifest">
 </head>
 
-<body>
+<body class = "bg">
     <header>
         <h1 class="title">
             Doctor ZuHause &#x1F691;
         </h1>
     </header>
-    <form action="/getDiagnosis" class="desc-form" method = "POST">
+    <form action="/getDiagnosis" class="desc-form" method = "POST" >
         <label for="name">Name</label>
-        <input class="u-full-width" type="text" id="name" name="name">
+        <input class="u-full-width" type="text" id="name" name="name" placeholder="John">
         <label for="content">How are you feeling? What are your symptoms?</label>
-        <textarea class="u-full-width" type="text" id="content" name="content"></textarea>
+        <textarea class="u-full-width" type="text" id="content" name="content" placeholder="I have fever since the last few days..."></textarea>
         <button class="button-primary">Get your diagnosis &#x1F469;&#x200D;&#x2695;&#xFE0F;</button>
     </form>
     <div class="loading">
