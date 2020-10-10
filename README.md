@@ -23,5 +23,21 @@ cd input
 
 ```
 cd app
+```
+
+To install the dependencies
+
+```
+npm install
+```
+
+To start the server
+```
+npm adstart
+```
+
+To run in dev mode
+
+```
 npm run dev
 ```
