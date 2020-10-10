@@ -33,7 +33,7 @@ npm install
 
 To start the server
 ```
-npm adstart
+npm start
 ```
 
 To run in dev mode
